@@ -22,6 +22,7 @@ function App() {
     const newPost = {
       author: formInputs['author'].value,
       body: formInputs['body'].value
+      console.log("newPost")
     }
 
     request.post({
@@ -29,6 +30,9 @@ function App() {
       form: newPost
     }, (err, res, data) => {
       setPosts(posts => [JSON.parse(data)].concat(posts));
+
+      console.log(newPost)
+      console.log("newPost")
     })
   }, []);
 
